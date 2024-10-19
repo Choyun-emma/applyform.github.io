@@ -1,0 +1,87 @@
+body{
+    background-image: url(Brown.png);
+    background-size: cover;/* 使圖片覆蓋整個背景並保持比例 */
+    background-position:center;/* 將圖片置中 */
+    background-repeat: no-repeat; /* 避免圖片重複 */
+}
+
+/*以下為電腦版設計，螢幕大於1250px */
+.headline{
+    font-size: 30px;font-weight:bold;
+    padding-top: 50px;/* 字離框框上方距離遠一點 */
+    margin-bottom: 15px;text-align:center;
+}
+
+
+.list{
+   display: flex;
+   flex-direction: column;/* 垂直排列 */
+   justify-content: center;/* 垂直置中 */
+   align-items: center;/* 水平置中 */
+   padding-bottom: 50px ;
+}
+.item{
+   flex:none;
+   width: 600px;
+   margin:10px;
+   background-color:#D95B5B; 
+   padding: 5px;
+   border-radius: 8px;/* 倒圓角的大小 */
+   color:white;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.table,/* 全局表格通用樣式 */
+.item-info table{
+    width:200px;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+th,/* 表格頭部和單元格通用設定 */
+td,
+.item-info th,
+.item-info td{
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+th{
+    background-color: #f4f4f4;
+    color:#333
+}
+
+.item-info{
+  background-color: aliceblue;
+  padding: 10px;
+  margin-top: 5px;/* 確保與上方 .item 框有一些空間 */
+  border: 1px solid darkgrey;/* 邊框的粗細和顏色 */
+  border-radius: 5px;/* 倒圓角的大小 */
+  color:darkslategray
+}
+.item-info strong{
+    text-align: center; /* 使內容文字居中，這不影響表格 */
+    font-weight: bold;/* 加粗文字 */
+    color:black;
+}
+
+
+/* (平板)螢幕小於1250px,套用以下區塊的css */
+@media(max-width:1250px){
+    .list{
+        flex-wrap:wrap;/* 項目會往下掉 */
+    }
+    .item{
+        width: 60%;/* 會變兩格平行 */
+    }
+}
+
+/* （手機）螢幕小於500px,套用這個區塊的css */
+@media(max-width:500px){
+     /* 螢幕小於500px,套用這個區塊的css */
+    .headline{
+        font-size: 20px;/* 手機最小是360 */
+    }
+    .item{
+        width:90%;
+
+    }
+}
